@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { carTypes, cars as carsData } from './data';
+import { Box, Autocomplete, TextField } from '@mui/material';
 
 function App() {
+  const [cars, setCars] = useState(carsData);
+  const [filters, setFilters] = useState({});
+
+  const handleSetFilter = (key, value) => {
+    setFilters({
+      ...filters,
+      [key]: value,
+    });
+    if (key === 'type') {
+      if (value) setCars(carsData.filter(e => e[key] === value));
+      else setCars(carsData);
+    }
+  } 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box sx={{ p: 4 }}>
+      <Box>
+        <Autocomplete
+          value={filters?.type || null}
+          onChange={(event, newValue) => handleSetFilter('type', newValue)}
+          options={carTypes}
+          sx={{ width: 300 }}
+          renderInput={(params) => <TextField {...params} label="Car Type" />}
+        />
+      </Box>
+      <Box>
+        {cars.map((car, i) => (
+          <Box key={i}>
+            {`${car.brand} - ${car.model} - ${car.type}`}
+          </Box>
+        ))}
+      </Box>
+    </Box>
   );
 }
 
