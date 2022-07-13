@@ -5,7 +5,7 @@ export const velgTypes = ['standard', 'sport'];
 export const cars = [
   {
     type: carTypes[0],
-    model: 'aaa',
+    model: 'aaa qwerty',
     brand: 'Toyota',
     parts: [
       {
@@ -18,7 +18,7 @@ export const cars = [
   },
   {
     type: carTypes[1],
-    model: 'bbb',
+    model: 'bbb qwerty',
     brand: 'Toyota',
     parts: [
       {
@@ -31,7 +31,7 @@ export const cars = [
   },
   {
     type: carTypes[0],
-    model: 'ccc',
+    model: 'ccc qwerty',
     brand: 'honda',
     parts: [
       {
@@ -44,7 +44,7 @@ export const cars = [
   },
   {
     type: carTypes[1],
-    model: 'ddd',
+    model: 'ddd uiop',
     brand: 'honda',
     parts: [
       {
@@ -57,7 +57,7 @@ export const cars = [
   },
   {
     type: carTypes[2],
-    model: 'eee',
+    model: 'eee uiop',
     brand: 'Lamborghini',
     parts: [
       {
@@ -70,7 +70,7 @@ export const cars = [
   },
   {
     type: carTypes[2],
-    model: 'fff',
+    model: 'fff uiop',
     brand: 'Lamborghini',
     parts: [
       {
