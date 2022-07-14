@@ -1,6 +1,6 @@
 export const carTypes = ['electrical', '2 wheels', 'sport'];
 
-export const velgTypes = ['standard', 'sport'];
+export const rimTypes = ['standard', 'sport'];
 
 export const cars = [
   {
@@ -8,7 +8,7 @@ export const cars = [
     model: 'aaa qwerty',
     brand: 'toyota',
     parts: {
-      velg: velgTypes[0],
+      rim: rimTypes[0],
       doors: 4,
       seats: 5,
       power: "600 KW (604HP)",
@@ -19,7 +19,7 @@ export const cars = [
     model: 'bbb qwerty',
     brand: 'toyota',
     parts: {
-      velg: velgTypes[1],
+      rim: rimTypes[1],
       doors: 4,
       seats: 7,
       cylinder: "1400 cc",
@@ -30,7 +30,7 @@ export const cars = [
     model: 'ccc qwerty',
     brand: 'honda',
     parts: {
-      velg: velgTypes[0],
+      rim: rimTypes[0],
       doors: 4,
       seats: 5,
       power: "700 KW (938HP)",
@@ -41,7 +41,7 @@ export const cars = [
     model: 'ddd uiop',
     brand: 'honda',
     parts: {
-      velg: velgTypes[1],
+      rim: rimTypes[1],
       doors: 4,
       seats: 7,
       cylinder: "2000 cc",
@@ -52,7 +52,7 @@ export const cars = [
     model: 'eee uiop',
     brand: 'lamborghini',
     parts: {
-      velg: velgTypes[0],
+      rim: rimTypes[0],
       doors: 2,
       seats: 2,
       cylinder: "6500 cc",
@@ -63,7 +63,7 @@ export const cars = [
     model: 'fff uiop',
     brand: 'lamborghini',
     parts: {
-      velg: velgTypes[1],
+      rim: rimTypes[1],
       doors: 2,
       seats: 4,
       cylinder: "6000 cc",
