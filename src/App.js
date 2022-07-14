@@ -1,7 +1,17 @@
 import { useState, useEffect } from 'react';
 import { carTypes, cars as carsData } from './data';
 import useDebounce from './hooks/useDebonce';
-import { Box, Autocomplete, TextField, Stack, Typography } from '@mui/material';
+import {
+  Box,
+  Autocomplete,
+  TextField,
+  Stack,
+  Typography,
+  List,
+  ListItem,
+  ListItemText,
+  Divider
+} from '@mui/material';
 
 function App() {
   const [cars, setCars] = useState(carsData);
@@ -55,13 +65,30 @@ function App() {
           sx={{ width: 300, maxWidth: '100%' }}
         />
       </Stack>
-      <Box>
+      <List sx={{ maxWidth: 616 }}>
         {cars.map((car, i) => (
           <Box key={i}>
-            {`${car.brand} - ${car.model} - ${car.type}`}
+            <ListItem sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+              <ListItemText
+                primary={
+                  <Typography sx={{ textTransform: 'capitalize' }}>
+                    {`${car.brand} - ${car.model}`}
+                  </Typography>
+                }
+              />
+              <Typography variant="caption" sx={{ textTransform: 'capitalize' }}>
+                {`Type: ${car.type}`}
+              </Typography>
+              {Object.keys(car.parts).map((key, i) => (
+                <Typography key={i} variant="caption" sx={{ textTransform: 'capitalize' }}>
+                  {`${key}: ${car.parts[key]}`}
+                </Typography>
+              ))}
+            </ListItem>
+            <Divider />
           </Box>
         ))}
-      </Box>
+      </List>
     </Box>
   );
 }
